@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reporte de prueba k6 - Login</title>
+  <style>
+    :root {
+      --bg: #f4f7fb;
+      --card: #ffffff;
+      --primary: #0b5fff;
+      --success: #1f9d55;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    .container {
+      max-width: 980px;
+      margin: 40px auto;
+      padding: 24px;
+    }
+
+    .header {
+      background: linear-gradient(135deg, #0b5fff, #3f8cff);
+      color: white;
+      border-radius: 16px;
+      padding: 28px 30px;
+      box-shadow: var(--shadow);
+      margin-bottom: 24px;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: 2rem;
+    }
+
+    .subtitle {
+      margin: 0;
+      opacity: 0.9;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+      margin-bottom: 24px;
+    }
+
+    .card {
+      background: var(--card);
+      padding: 22px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+
+    .label {
+      color: var(--muted);
+      display: block;
+      font-size: 0.82rem;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .value {
+      font-size: 1.9rem;
+      font-weight: 700;
+    }
+
+    .success { color: var(--success); }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--card);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+    }
+
+    th, td {
+      padding: 14px 16px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+
+    th {
+      background: #f8fafc;
+    }
+
+    .status-good {
+      color: var(--success);
+      font-weight: 700;
+    }
+
+    .section {
+      margin-top: 28px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Reporte de prueba k6</h1>
+      <p class="subtitle">Endpoint: http://localhost:3000/auth/signin</p>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <span class="label">Checks total</span>
+        <div class="value">20</div>
+      </div>
+      <div class="card">
+        <span class="label">Checks exitosos</span>
+        <div class="value success">100.00%</div>
+      </div>
+      <div class="card">
+        <span class="label">Requests</span>
+        <div class="value">10</div>
+      </div>
+      <div class="card">
+        <span class="label">Fallos</span>
+        <div class="value">0.00%</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <table>
+        <thead>
+          <tr>
+            <th>Concepto</th>
+            <th>Valor</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Resultado general</td>
+            <td class="status-good">PASS</td>
+          </tr>
+          <tr>
+            <td>Status HTTP</td>
+            <td>200 OK</td>
+          </tr>
+          <tr>
+            <td>Token en respuesta</td>
+            <td class="status-good">Presente</td>
+          </tr>
+          <tr>
+            <td>Duración promedio</td>
+            <td>75.6 ms</td>
+          </tr>
+          <tr>
+            <td>Duración máxima</td>
+            <td>131.24 ms</td>
+          </tr>
+          <tr>
+            <td>Usuarios virtuales</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>Duración de prueba</td>
+            <td>10s</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+</html>
